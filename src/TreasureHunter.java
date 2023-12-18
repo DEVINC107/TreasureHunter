@@ -55,7 +55,7 @@ public class TreasureHunter {
         }
 
         // set hunter instance variable
-        hunter = new Hunter(name, testMode ? 100 : 10);
+        hunter = new Hunter(name, testMode ? 1 : 10);
         hunter.addItem("water");
         hunter.addItem("rope");
         hunter.addItem("machete");
@@ -102,7 +102,7 @@ public class TreasureHunter {
     private void showMenu() {
         String choice = "";
 
-        while (!choice.equals("x")) {
+        while (!choice.equals("x") && hunter.getGold() > 0) {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
             System.out.println("***");
@@ -117,6 +117,10 @@ public class TreasureHunter {
             System.out.print("What's your next move? ");
             choice = SCANNER.nextLine().toLowerCase();
             processChoice(choice);
+        }
+        if (hunter.getGold() <= 0) {
+            System.out.println(currentTown.getLatestNews());
+            System.out.println("Game over");
         }
     }
 

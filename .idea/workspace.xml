@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9208b76-a5d1-452f-ba8d-c6088449f170" name="Changes" comment="init">
+    <list default="true" id="d9208b76-a5d1-452f-ba8d-c6088449f170" name="Changes" comment="completed TH-1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hunter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TreasureHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreasureHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,16 +30,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/BT_1N3_19/IdeaProjects/ChenAndWengTreasureHunter/src",
-    "onboarding.tips.debug.path": "C:/Users/BT_1N3_19/IdeaProjects/ChenAndWengTreasureHunter/src/Main.java",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/BT_1N3_19/IdeaProjects/ChenAndWengTreasureHunter/src&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/BT_1N3_19/IdeaProjects/ChenAndWengTreasureHunter/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\BT_1N3_19\IdeaProjects\ChenAndWengTreasureHunter\src" />
@@ -59,12 +60,53 @@
       <option name="project" value="LOCAL" />
       <updated>1702911641803</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added colors class">
+      <created>1702912230828</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702912230828</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added colors to shop">
+      <created>1702912591283</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702912591283</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added colors to Hunter">
+      <created>1702912692713</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702912692713</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added colors to brawl">
+      <created>1702913109417</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702913109417</updated>
+    </task>
+    <task id="LOCAL-00006" summary="completed TH-1">
+      <created>1702913212874</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702913212874</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="Added colors class" />
+    <MESSAGE value="Added colors to shop" />
+    <MESSAGE value="Added colors to Hunter" />
+    <MESSAGE value="Added colors to town and kit" />
+    <MESSAGE value="Added colors to brawl" />
+    <MESSAGE value="completed TH-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed TH-1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

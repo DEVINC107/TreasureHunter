@@ -199,4 +199,12 @@ public class Hunter {
 
         return -1;
     }
+
+    /**
+     * Gold getter
+     * @return amount of gold
+     */
+    public int getGold() {
+        return gold;
+    }
 }
