@@ -16,6 +16,7 @@ public class TreasureHunter {
     private Town currentTown;
     private Hunter hunter;
     private boolean hardMode;
+    private boolean testMode;
 
     /**
      * Constructs the Treasure Hunter game.
@@ -45,14 +46,21 @@ public class TreasureHunter {
         System.out.print("What's your name, Hunter? ");
         String name = SCANNER.nextLine().toLowerCase();
 
-        // set hunter instance variable
-        hunter = new Hunter(name, 10);
-
         System.out.print("Hard mode? (y/n): ");
         String hard = SCANNER.nextLine().toLowerCase();
         if (hard.equals("y")) {
             hardMode = true;
+        } else if (hard.equals("test")) {
+            testMode = true;
         }
+
+        // set hunter instance variable
+        hunter = new Hunter(name, testMode ? 100 : 10);
+        hunter.addItem("water");
+        hunter.addItem("rope");
+        hunter.addItem("machete");
+        hunter.addItem("horse");
+        hunter.addItem("boat");
     }
 
     /**

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9208b76-a5d1-452f-ba8d-c6088449f170" name="Changes" comment="Added colors to Hunter">
-      <change beforePath="$PROJECT_DIR$/src/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Town.java" afterDir="false" />
+    <list default="true" id="d9208b76-a5d1-452f-ba8d-c6088449f170" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/src/TreasureHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreasureHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/BT_1N3_19/IdeaProjects/ChenAndWengTreasureHunter/src",
     "onboarding.tips.debug.path": "C:/Users/BT_1N3_19/IdeaProjects/ChenAndWengTreasureHunter/src/Main.java",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
@@ -58,36 +59,12 @@
       <option name="project" value="LOCAL" />
       <updated>1702911641803</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added colors class">
-      <created>1702912230828</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1702912230828</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added colors to shop">
-      <created>1702912591283</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1702912591283</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added colors to Hunter">
-      <created>1702912692713</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1702912692713</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <MESSAGE value="Added colors class" />
-    <MESSAGE value="Added colors to shop" />
-    <MESSAGE value="Added colors to Hunter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added colors to Hunter" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
