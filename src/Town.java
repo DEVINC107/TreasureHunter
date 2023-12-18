@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * The Town Class is where it all happens.
  * The Town is designed to manage all the things a Hunter can do in town.
@@ -123,18 +126,25 @@ public class Town {
      * @return A Terrain object.
      */
     private Terrain getNewTerrain() {
-        double rnd = Math.random();
-        if (rnd < .2) {
-            return new Terrain("Mountains", "Rope");
-        } else if (rnd < .4) {
-            return new Terrain("Ocean", "Boat");
-        } else if (rnd < .6) {
-            return new Terrain("Plains", "Horse");
-        } else if (rnd < .8) {
-            return new Terrain("Desert", "Water");
-        } else {
-            return new Terrain("Jungle", "Machete");
+        HashMap<String, String> terrains = new HashMap<>();
+        terrains.put("Mountains", "Rope");
+        terrains.put("Ocean", "Boat");
+        terrains.put("Plains", "Horse");
+        terrains.put("Desert", "Water");
+        terrains.put("Jungle", "Machete");
+        terrains.put("Marsh", "Boots");
+
+        int rnd = (int) (Math.random() * terrains.size());
+        int currentIndex = 0;
+
+        for (Map.Entry<String, String> entry : terrains.entrySet()) {
+            if (currentIndex == rnd) {
+                return new Terrain(entry.getKey(), entry.getValue());
+            }
+            currentIndex++;
         }
+
+        return new Terrain("FHWAUIDHUIWHUIDUIAWDHAWUIHDI", "WGADGAWYDGUUAWGDUWGDAWGDU");
     }
 
     /**
