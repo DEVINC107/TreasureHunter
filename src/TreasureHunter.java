@@ -128,6 +128,7 @@ public class TreasureHunter {
         }
     }
 
+
     /**
      * Takes the choice received from the menu and calls the appropriate method to carry out the instructions.
      * @param choice The action to process.
