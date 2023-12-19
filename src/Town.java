@@ -40,6 +40,10 @@ public class Town {
         return printMessage;
     }
 
+    public void setLatestNews(String newNews) {
+        printMessage = newNews;
+    }
+
     /**
      * Assigns an object to the Hunter in town.
      *
@@ -68,7 +72,7 @@ public class Town {
             printMessage = "You used your " + item + " to cross the " + terrain.getTerrainName() + ".";
             if (checkItemBreak()) {
                 hunter.removeItemFromKit(item);
-                printMessage += "\nUnfortunately, your " + item + " broke.";
+                printMessage += "\nUnfortunately, you lost your " + item;
             }
 
             return true;

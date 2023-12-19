@@ -88,6 +88,8 @@ public class TreasureHunter {
         // object in other methods of this class
         currentTown = new Town(shop, toughness);
 
+        shop.setTown(currentTown);
+
         // calling the hunterArrives method, which takes the Hunter
         // as a parameter; note this also could have been done in the
         // constructor for Town, but this illustrates another way to associate
