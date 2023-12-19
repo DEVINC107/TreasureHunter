@@ -15,6 +15,8 @@ public class Town {
     private String printMessage;
     private boolean toughTown;
     private boolean dugForGold;
+    private String treasure;
+    private boolean lookedForTreasure;
 
     /**
      * The Town Constructor takes in a shop and the surrounding terrain, but leaves the hunter as null until one arrives.
@@ -34,6 +36,20 @@ public class Town {
 
         // higher toughness = more likely to be a tough town
         toughTown = (Math.random() < toughness);
+
+        int treasureId = (int) (Math.random() * 4);
+        if (treasureId == 0) {
+            treasure = "crown";
+        }
+        if (treasureId == 1) {
+                treasure = "trophy";
+        }
+        if (treasureId == 2) {
+                treasure = "gem";
+        }
+        if (treasureId == 3) {
+                treasure = "dust";
+        }
     }
 
     public String getLatestNews() {
@@ -91,6 +107,23 @@ public class Town {
         shop.enter(hunter, choice);
     }
 
+    public void lookForTreasure() {
+        if (lookedForTreasure) {
+            printMessage = "You already searched for treasure, get the hell out";
+            return;
+        }
+        lookedForTreasure = true;
+        printMessage = "You found " + treasure;
+        if (treasure.equals("dust")) {
+            return;
+        }
+        if (hunter.hasTreasureInInventory(treasure)) {
+            printMessage = "Unfortunately you already have one of these. Try your luck in the next town!";
+            return;
+        }
+        hunter.addTreasure(treasure);
+    }
+
     /**
      * Gives the hunter a chance to fight for some gold.<p>
      * The chances of finding a fight and winning the gold are based on the toughness of the town.<p>
@@ -122,6 +155,10 @@ public class Town {
     }
 
     public void lookForGold() {
+        if (dugForGold) {
+            printMessage = "Already dug here, get the hell out.";
+            return;
+        }
         if (hunter.hasItemInKit("shovel")) {
             double rand = Math.random();
             if (rand > 0.5) {

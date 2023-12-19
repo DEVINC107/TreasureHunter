@@ -8,6 +8,7 @@ public class Hunter {
     //instance variables
     private String hunterName;
     private String[] kit;
+    private String[] treasures;
     private int gold;
 
     /**
@@ -18,9 +19,11 @@ public class Hunter {
      */
     public Hunter(String hunterName, int startingGold) {
         this.hunterName = hunterName;
-        kit = new String[6]; // only 6 possible items can be stored in kit
+        kit = new String[7]; // only 7 possible items can be stored in kit
+        treasures = new String[3]; // only 4 possible treasures
         gold = startingGold;
     }
+
 
     //Accessors
     public String getHunterName() {
@@ -74,6 +77,38 @@ public class Hunter {
         return true;
     }
 
+    public void removeTreasureFromInventory(String item) {
+        int itmIdx = findTreasureInInventory(item);
+
+        // if item is found
+        if (itmIdx >= 0) {
+            treasures[itmIdx] = null;
+        }
+    }
+
+    private int findTreasureInInventory(String item) {
+        for (int i = 0; i < treasures.length; i++) {
+            String tmpItem = treasures[i];
+
+            if (item.equals(tmpItem)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public boolean hasTreasureInInventory(String item) {
+        for (String tmpItem : treasures) {
+            if (item.equals(tmpItem)) {
+                // early return
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     /**
      * Removes an item from the kit by setting the index of the item to null.
      *
@@ -86,6 +121,26 @@ public class Hunter {
         if (itmIdx >= 0) {
             kit[itmIdx] = null;
         }
+    }
+
+    private int emptyPositionInTreasures() {
+        for (int i = 0; i < treasures.length; i++) {
+            if (treasures[i] == null) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public boolean addTreasure(String item) {
+        if (!hasTreasureInInventory(item)) {
+            int idx = emptyPositionInTreasures();
+            treasures[idx] = item;
+            return true;
+        }
+
+        return false;
     }
 
     /**
