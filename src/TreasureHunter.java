@@ -15,7 +15,7 @@ public class TreasureHunter {
     // instance variables
     private Town currentTown;
     private Hunter hunter;
-    private boolean hardMode;
+    private String difficulty; // "e / n / h"
     private boolean testMode;
 
     /**
@@ -25,7 +25,7 @@ public class TreasureHunter {
         // these will be initialized in the play method
         currentTown = null;
         hunter = null;
-        hardMode = false;
+        difficulty = "n";
     }
 
     /**
@@ -46,22 +46,28 @@ public class TreasureHunter {
         System.out.print("What's your name, Hunter? ");
         String name = SCANNER.nextLine().toLowerCase();
 
-        System.out.print("Hard mode? (y/n): ");
-        String hard = SCANNER.nextLine().toLowerCase();
-        if (hard.equals("y")) {
-            hardMode = true;
-        } else if (hard.equals("test")) {
+        System.out.print("Easy, Normal, or Hard? (e/n/h): ");
+        String difficultyChoice = SCANNER.nextLine().toLowerCase();
+        if (difficultyChoice.equals("e") || difficultyChoice.equals("n") || difficultyChoice.equals("h")) {
+            difficulty = difficultyChoice;
+        } else if (difficultyChoice.equals("test")) {
             testMode = true;
         }
 
         // set hunter instance variable
-        hunter = new Hunter(name, testMode ? 1 : 10);
-        hunter.addItem("water");
-        hunter.addItem("rope");
-        hunter.addItem("machete");
-        hunter.addItem("horse");
-        hunter.addItem("boat");
-        hunter.addItem("boots");
+        int startingGold = testMode ? 100 : 10;
+        if (difficulty.equals("e")) {
+            startingGold *= 2;
+        }
+        hunter = new Hunter(name, startingGold, difficulty);
+        if (testMode) {
+            hunter.addItem("water");
+            hunter.addItem("rope");
+            hunter.addItem("machete");
+            hunter.addItem("horse");
+            hunter.addItem("boat");
+            hunter.addItem("boots");
+        }
     }
 
     /**
@@ -70,7 +76,10 @@ public class TreasureHunter {
     private void enterTown() {
         double markdown = 0.25;
         double toughness = 0.4;
-        if (hardMode) {
+        if (difficulty.equals("e")) {
+            markdown = 0;
+            toughness = 0.2;
+        } else if (difficulty.equals("h")) {
             // in hard mode, you get less money back when you sell items
             markdown = 0.5;
 
