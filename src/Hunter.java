@@ -104,6 +104,9 @@ public class Hunter {
         return -1;
     }
 
+    public boolean hasAnyTreasures() {
+        return treasures.length > 0;
+    }
     public boolean hasTreasureInInventory(String item) {
         for (String tmpItem : treasures) {
             if (item.equals(tmpItem)) {
@@ -202,6 +205,16 @@ public class Hunter {
         return printableKit;
     }
 
+    public String getTreasures() {
+        String ret = "";
+        for (String treasure : treasures) {
+            if (treasure != null) {
+                ret += Colors.YELLOW + treasure + " ";
+            }
+        }
+        return ret;
+    }
+
     /**
      * @return A string representation of the hunter.
      */
@@ -210,6 +223,10 @@ public class Hunter {
         if (!kitIsEmpty()) {
             str += " and " + getInventory();
         }
+        if (hasAnyTreasures()) {
+            str += "\nTreasures found: " + getTreasures();
+        }
+        str += Colors.RESET;
         return str;
     }
 

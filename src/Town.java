@@ -38,17 +38,18 @@ public class Town {
         toughTown = (Math.random() < toughness);
 
         int treasureId = (int) (Math.random() * 4);
+
         if (treasureId == 0) {
             treasure = "crown";
         }
         if (treasureId == 1) {
-                treasure = "trophy";
+            treasure = "trophy";
         }
         if (treasureId == 2) {
-                treasure = "gem";
+            treasure = "gem";
         }
         if (treasureId == 3) {
-                treasure = "dust";
+            treasure = "dust";
         }
     }
 
