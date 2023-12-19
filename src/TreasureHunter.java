@@ -114,7 +114,7 @@ public class TreasureHunter {
     private void showMenu() {
         String choice = "";
 
-        while (!choice.equals("x") && hunter.getGold() > 0) {
+        while (!choice.equals("x") && hunter.getGold() > 0 && !hunter.checkForWin()) {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
             System.out.println("***");

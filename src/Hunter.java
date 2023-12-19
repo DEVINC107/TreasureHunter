@@ -152,6 +152,18 @@ public class Hunter {
         return false;
     }
 
+    public boolean foundAllTreasures() {
+        return emptyPositionInKit() == -1;
+    }
+
+    public boolean checkForWin() {
+        if (foundAllTreasures()) {
+            System.out.println("Congratulations, you have found the last of the three treasures, you win!");
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Checks to make sure that the item is not already in the kit.
      * If not, it assigns the item to an index in the kit with a null value ("empty" position).
