@@ -74,14 +74,14 @@ public class TreasureHunter {
      * Creates a new town and adds the Hunter to it.
      */
     private void enterTown() {
-        double markdown = 0.25;
+        double markdown = 0.5;
         double toughness = 0.4;
         if (difficulty.equals("e")) {
-            markdown = 0;
+            markdown = 0.75;
             toughness = 0.2;
         } else if (difficulty.equals("h")) {
             // in hard mode, you get less money back when you sell items
-            markdown = 0.5;
+            markdown = 0.25;
 
             // and the town is "tougher"
             toughness = 0.75;
