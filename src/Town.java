@@ -104,8 +104,8 @@ public class Town {
      *
      * @param choice If the user wants to buy or sell items at the shop.
      */
-    public void enterShop(String choice) {
-        shop.enter(hunter, choice);
+    public void enterShop(String choice, String difficulty) {
+        shop.enter(hunter, choice, difficulty);
     }
 
     public void lookForTreasure() {
