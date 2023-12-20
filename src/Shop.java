@@ -15,7 +15,8 @@ public class Shop {
     private static final int BOAT_COST = 20;
     private static final int BOOTS_COST = 1;
     private static final int SHOVEL_COST = 8;
-
+    private static final int SWORD_COST = 0;
+private String diff;
     // static variables
     private static final Scanner SCANNER = new Scanner(System.in);
 
@@ -44,7 +45,8 @@ public class Shop {
      * @param hunter the Hunter entering the shop
      * @param buyOrSell String that determines if hunter is "B"uying or "S"elling
      */
-    public void enter(Hunter hunter, String buyOrSell) {
+    public void enter(Hunter hunter, String buyOrSell, String difficulty) {
+        diff = difficulty;
         customer = hunter;
 
         if (buyOrSell.equals("b")) {
@@ -54,7 +56,7 @@ public class Shop {
             System.out.print("What're you lookin' to buy? ");
             String item = SCANNER.nextLine().toLowerCase();
             int cost = checkMarketPrice(item, true);
-            if (cost == 0) {
+            if (cost == -1) {
                 System.out.println("We ain't got none of those.");
             } else {
                 System.out.print("It'll cost you " + Colors.YELLOW + cost + Colors.RESET + " gold. Buy it (y/n)? ");
@@ -98,6 +100,9 @@ public class Shop {
         str += "Boat: " + BOAT_COST + " gold\n";
         str += "Boots: " + BOOTS_COST + " gold\n";
         str += "Shovel: " + SHOVEL_COST + " gold\n";
+        if (diff.equals("s")) {
+            str += "Sword: " + SWORD_COST + " gold\n";
+        }
         return str;
     }
 
@@ -165,8 +170,10 @@ public class Shop {
             return ROPE_COST;
         } else if (item.equals("shovel")) {
             return SHOVEL_COST;
+        } else if (item.equals("sword")) {
+            return SWORD_COST;
         } else {
-            return 0;
+            return -1;
         }
     }
 

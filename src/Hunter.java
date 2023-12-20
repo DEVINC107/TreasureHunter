@@ -21,6 +21,9 @@ public class Hunter {
     public Hunter(String hunterName, int startingGold, String difficulty) {
         this.hunterName = hunterName;
         kit = new String[7]; // only 7 possible items can be stored in kit
+        if (difficulty.equals("s")) {
+            kit = new String[8];
+        }
         treasures = new String[3]; // only 4 possible treasures
         gold = startingGold;
         this.difficulty = difficulty;
@@ -56,7 +59,7 @@ public class Hunter {
      * @return true if the item is successfully bought.
      */
     public boolean buyItem(String item, int costOfItem) {
-        if (costOfItem == 0 || gold < costOfItem || hasItemInKit(item)) {
+        if (costOfItem == -1 || gold < costOfItem || hasItemInKit(item)) {
             return false;
         }
 
