@@ -9,7 +9,7 @@ public class Window {
     private StyledDocument doc;
     private Style style;
     private JTextPane textPane;
-    public static Window window;
+    public static Window window; // Allows window to be accessed anywhere
 
     public Window() {
         window = this;
