@@ -50,16 +50,16 @@ private String diff;
         customer = hunter;
 
         if (buyOrSell.equals("b")) {
-            System.out.println("Welcome to the shop! We have the finest wares in town.");
-            System.out.println("Currently we have the following items:");
-            System.out.println(inventory());
-            System.out.print("What're you lookin' to buy? ");
+            Window.window.addTextToWindow("\nWelcome to the shop! We have the finest wares in town.");
+            Window.window.addTextToWindow("\nCurrently we have the following items:");
+            Window.window.addTextToWindow(inventory());
+            Window.window.addTextToWindow("\nWhat're you lookin' to buy? ");
             String item = SCANNER.nextLine().toLowerCase();
             int cost = checkMarketPrice(item, true);
             if (cost == -1) {
-                System.out.println("We ain't got none of those.");
+                Window.window.addTextToWindow("\nWe ain't got none of those.");
             } else {
-                System.out.print("It'll cost you " + Colors.YELLOW + cost + Colors.RESET + " gold. Buy it (y/n)? ");
+                Window.window.addTextToWindow("\nIt'll cost you " + Colors.YELLOW + cost + Colors.RESET + " gold. Buy it (y/n)? ");
                 String option = SCANNER.nextLine().toLowerCase();
 
                 if (option.equals("y")) {
@@ -67,14 +67,14 @@ private String diff;
                 }
             }
         } else {
-            System.out.println("What're you lookin' to sell? ");
-            System.out.print("You currently have the following items: " + customer.getInventory());
+            Window.window.addTextToWindow("\nWhat're you lookin' to sell? ");
+            Window.window.addTextToWindow("\nYou currently have the following items: " + customer.getInventory());
             String item = SCANNER.nextLine().toLowerCase();
             int cost = checkMarketPrice(item, false);
             if (cost == 0) {
-                System.out.println("We don't want none of those.");
+                Window.window.addTextToWindow("\nWe don't want none of those.");
             } else {
-                System.out.print("It'll get you " + cost + " gold. Sell it (y/n)? ");
+                Window.window.addTextToWindow("\nIt'll get you " + cost + " gold. Sell it (y/n)? ");
                 String option = SCANNER.nextLine().toLowerCase();
 
                 if (option.equals("y")) {
@@ -114,9 +114,9 @@ private String diff;
     public void buyItem(String item) {
         int costOfItem = checkMarketPrice(item, true);
         if (customer.buyItem(item, costOfItem)) {
-            System.out.println(customer.hasItemInKit("sword") ? "Have my " + item + ". For free." :"Ye' got yerself a " + item + ". Come again soon.");
+            Window.window.addTextToWindow(customer.hasItemInKit("sword") ? "Have my " + item + ". For free." :"Ye' got yerself a " + item + ". Come again soon.");
         } else {
-            System.out.println("Hmm, either you don't have enough gold or you've already got one of those!");
+            Window.window.addTextToWindow("\nHmm, either you don't have enough gold or you've already got one of those!");
         }
     }
 
@@ -128,9 +128,9 @@ private String diff;
     public void sellItem(String item) {
         int buyBackPrice = checkMarketPrice(item, false);
         if (customer.sellItem(item, buyBackPrice)) {
-            System.out.println("Pleasure doin' business with you.");
+            Window.window.addTextToWindow("\nPleasure doin' business with you.");
         } else {
-            System.out.println("Stop stringin' me along!");
+            Window.window.addTextToWindow("\nStop stringin' me along!");
         }
     }
 

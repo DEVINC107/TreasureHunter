@@ -166,7 +166,7 @@ public class Hunter {
 
     public boolean checkForWin() {
         if (foundAllTreasures()) {
-            System.out.println("Congratulations, you have found the last of the three treasures, you win!");
+            Window.window.addTextToWindow("\nCongratulations, you have found the last of the three treasures, you win!");
             return true;
         }
         return false;
